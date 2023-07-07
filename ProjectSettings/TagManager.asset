@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Cat Head
+    uniqueID: 2903934155
+    locked: 0
+  - name: Toy Box
+    uniqueID: 694776753
+    locked: 0
+  - name: Mice
+    uniqueID: 2609379069
+    locked: 0
+  - name: Cat Arms
+    uniqueID: 2990283957
+    locked: 0
