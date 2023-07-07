@@ -53,3 +53,6 @@ TagManager:
   - name: Cat Arms
     uniqueID: 2990283957
     locked: 0
+  - name: Label Text
+    uniqueID: 1636425787
+    locked: 0
