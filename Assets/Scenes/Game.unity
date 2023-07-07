@@ -507,6 +507,7 @@ MonoBehaviour:
   - {fileID: 1104840567}
   minCycleTime: 2
   maxCycleTime: 5
+  startingSlapDelay: 1.5
 --- !u!1 &1104840567
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,6 +860,8 @@ MonoBehaviour:
   movementDistance: 3
   movementSpeed: 0.3
   mouseDistanceTolerance: 0.01
+  warningColor: {r: 1, g: 0.653165, b: 0, a: 1}
+  slapColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1388965675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1046,8 @@ MonoBehaviour:
   movementDistance: -3
   movementSpeed: 0.3
   mouseDistanceTolerance: 0.01
+  warningColor: {r: 1, g: 0.653165, b: 0, a: 1}
+  slapColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1969344004
 GameObject:
   m_ObjectHideFlags: 0

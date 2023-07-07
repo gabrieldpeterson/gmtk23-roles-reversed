@@ -8,11 +8,15 @@ public class Arm : MonoBehaviour
     [SerializeField] private float movementDistance = 4.0f;
     [SerializeField] private float movementSpeed = 2.0f;
     [SerializeField] private float mouseDistanceTolerance = 0.1f;
+    [SerializeField] private Color warningColor;
+    [SerializeField] private Color slapColor;
 
     private Vector2 _startingPosition;
+    private SpriteRenderer _spriteRenderer;
     private bool _canMove = true;
     private bool _lookingForMouse = false;
     private Arm[] _arms;
+    private Color _startingColor;
 
     private GameManager _gameManager;
 
@@ -31,6 +35,8 @@ public class Arm : MonoBehaviour
         _startingPosition = transform.position;
         _gameManager = FindFirstObjectByType<GameManager>();
         _arms = FindObjectsByType<Arm>(FindObjectsSortMode.None);
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        _startingColor = _spriteRenderer.color;
     }
 
     
@@ -62,6 +68,7 @@ public class Arm : MonoBehaviour
             {
                 Debug.Log($"{name} at {transform.position} is slapping {mouse.name} at {mouse.transform.position}");
                 ToggleBothArms();
+                StartCoroutine(Slap());
                 break;
             }
         }
@@ -89,5 +96,13 @@ public class Arm : MonoBehaviour
     public void ToggleMovement()
     {
         _canMove = !_canMove;
+    }
+
+    IEnumerator Slap()
+    {
+        _spriteRenderer.color = warningColor;
+        yield return new WaitForSeconds(_gameManager.GetCurrentSlapDelay());
+        _spriteRenderer.color = slapColor;
+
     }
 }
