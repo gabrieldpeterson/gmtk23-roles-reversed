@@ -12,6 +12,7 @@ public class Arm : MonoBehaviour
     private Vector2 _startingPosition;
     private bool _canMove = true;
     private bool _lookingForMouse = false;
+    private Arm[] _arms;
 
     private GameManager _gameManager;
 
@@ -29,6 +30,7 @@ public class Arm : MonoBehaviour
     {
         _startingPosition = transform.position;
         _gameManager = FindFirstObjectByType<GameManager>();
+        _arms = FindObjectsByType<Arm>(FindObjectsSortMode.None);
     }
 
     
@@ -59,9 +61,18 @@ public class Arm : MonoBehaviour
             if (Vector2.Distance(new Vector2(transform.position.x, 0f), new Vector2(mouse.transform.position.x, 0f)) <= mouseDistanceTolerance)
             {
                 Debug.Log($"{name} at {transform.position} is slapping {mouse.name} at {mouse.transform.position}");
-                _canMove = false;
+                ToggleBothArms();
                 break;
             }
+        }
+    }
+
+    private void ToggleBothArms()
+    {
+        foreach (Arm arm in _arms)
+        {
+            arm.ToggleLookingForMice();
+            arm.ToggleMovement();
         }
     }
 
@@ -70,7 +81,12 @@ public class Arm : MonoBehaviour
         _lookingForMouse = true;
     }
 
-    private void ToggleMovement()
+    public void ToggleLookingForMice()
+    {
+        _lookingForMouse = !_lookingForMouse;
+    }
+
+    public void ToggleMovement()
     {
         _canMove = !_canMove;
     }
