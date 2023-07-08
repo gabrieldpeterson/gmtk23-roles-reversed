@@ -11,12 +11,19 @@ public class Arm : MonoBehaviour
     [SerializeField] private Color warningColor;
     [SerializeField] private Color slapColor;
 
+    [SerializeField] private Sprite uprightArm;
+    [SerializeField] private Sprite shortArmSlap;
+    [SerializeField] private Sprite longArmSlap;
+    [SerializeField] private float yOffsetShortArmSlap = -2.0f;
+    [SerializeField] private float yOffsetLongArmSlap = -3.0f;
+
     private Vector2 _startingPosition;
     private SpriteRenderer _spriteRenderer;
     private bool _canMove = true;
     private bool _lookingForMouse = false;
     private Arm[] _arms;
     private Color _startingColor;
+    private float _armStartingYPosition;
 
     private GameManager _gameManager;
 
@@ -37,6 +44,7 @@ public class Arm : MonoBehaviour
         _arms = FindObjectsByType<Arm>(FindObjectsSortMode.None);
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startingColor = _spriteRenderer.color;
+        _armStartingYPosition = transform.position.y;
     }
 
     
@@ -85,6 +93,10 @@ public class Arm : MonoBehaviour
 
     private void ResetBothArms()
     {
+        _spriteRenderer.sprite = uprightArm;
+        _spriteRenderer.sortingLayerName = "Cat Arms Moving";
+        transform.position = new Vector3(transform.position.x, _armStartingYPosition, transform.position.z);
+        
         foreach (Arm arm in _arms)
         {
             arm.EnableCanMove();
@@ -128,6 +140,8 @@ public class Arm : MonoBehaviour
         _spriteRenderer.color = warningColor;
         yield return new WaitForSeconds(_gameManager.GetCurrentSlapDelay());
         
+        UpdateArmSpriteWhileSlapping(mouse);
+
         // If successfully dodged
         if (mouse.GetComponent<Mouse>().IsDucking())
         {
@@ -140,6 +154,27 @@ public class Arm : MonoBehaviour
         {
             _spriteRenderer.color = slapColor;
         }
+    }
 
+    private void UpdateArmSpriteWhileSlapping(GameObject mouse)
+    {
+        Mouse mouseScript = mouse.GetComponent<Mouse>();
+        _spriteRenderer.sortingLayerName = "Cat Arms Slapping";
+
+        if (mouseScript.GetRow() == Mouse.Row.Front)
+        {
+            _spriteRenderer.sprite = longArmSlap;
+            transform.position += new Vector3(0f, yOffsetLongArmSlap, 0f);
+        }
+        else if (mouseScript.GetRow() == Mouse.Row.Back)
+        {
+            _spriteRenderer.sprite = shortArmSlap;
+            transform.position += new Vector3(0f, yOffsetShortArmSlap, 0f);
+        }
+        else
+        {
+            Debug.LogWarning("Arm sprite error");
+            _spriteRenderer.sprite = uprightArm;
+        }
     }
 }

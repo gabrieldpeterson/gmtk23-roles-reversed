@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class Mouse : MonoBehaviour
 {
+    public enum Row
+    {
+        Front,
+        Back
+    };
+    
     [SerializeField] private Sprite _defaultSprite;
     [SerializeField] private Sprite _duckSprite;
+    [SerializeField] private Row row;
 
     private GameManager _gameManager;
     private SpriteRenderer _spriteRenderer;
@@ -45,5 +52,10 @@ public class Mouse : MonoBehaviour
     public bool IsDucking()
     {
         return _isDucking;
+    }
+
+    public Row GetRow()
+    {
+        return row;
     }
 }

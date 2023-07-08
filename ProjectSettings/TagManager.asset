@@ -65,6 +65,9 @@ TagManager:
   - name: Toy Box Front
     uniqueID: 694776753
     locked: 0
+  - name: Cat Arms Slapping
+    uniqueID: 2624749949
+    locked: 0
   - name: Label Text
     uniqueID: 1636425787
     locked: 0
