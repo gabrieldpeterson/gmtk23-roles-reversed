@@ -83,6 +83,16 @@ public class Arm : MonoBehaviour
         }
     }
 
+    private void ResetBothArms()
+    {
+        foreach (Arm arm in _arms)
+        {
+            arm.EnableCanMove();
+            arm.DisableLookingForMice();
+            arm.ResetColor();
+        }
+    }
+
     private void LookForMice()
     {
         _lookingForMouse = true;
@@ -98,11 +108,32 @@ public class Arm : MonoBehaviour
         _canMove = !_canMove;
     }
 
+    public void EnableCanMove()
+    {
+        _canMove = true;
+    }
+
+    public void DisableLookingForMice()
+    {
+        _lookingForMouse = false;
+    }
+
+    public void ResetColor()
+    {
+        _spriteRenderer.color = _startingColor;
+    }
+
     IEnumerator Slap(GameObject mouse)
     {
         _spriteRenderer.color = warningColor;
         yield return new WaitForSeconds(_gameManager.GetCurrentSlapDelay());
         _spriteRenderer.color = slapColor;
+        
+        // If successfully dodged
+        if (mouse.GetComponent<Mouse>().IsDucking())
+        {
+            ResetBothArms();
+        }
 
     }
 }
