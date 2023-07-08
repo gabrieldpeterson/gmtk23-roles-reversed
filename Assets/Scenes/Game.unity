@@ -1489,6 +1489,9 @@ MonoBehaviour:
   startingSlapDelay: 1.5
   delayBeforeGettingUp: 1
   mouseDuckDistance: -1.2
+  startingArmSpeed: 0.3
+  armSpeedIncrease: 0.1
+  slapDelayDecrease: -0.1
 --- !u!1 &1104840567
 GameObject:
   m_ObjectHideFlags: 0
@@ -2003,7 +2006,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDistance: 3
-  movementSpeed: 0.3
   mouseDistanceTolerance: 0.01
   warningColor: {r: 1, g: 0.653165, b: 0, a: 1}
   slapColor: {r: 1, g: 0, b: 0, a: 1}
@@ -2479,7 +2481,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDistance: -3
-  movementSpeed: 0.3
   mouseDistanceTolerance: 0.01
   warningColor: {r: 1, g: 0.653165, b: 0, a: 1}
   slapColor: {r: 1, g: 0, b: 0, a: 1}

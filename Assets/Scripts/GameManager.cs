@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private TMP_Text scoreText;
+    
     [SerializeField] private List<GameObject> mice;
 
     [SerializeField] private float minCycleTime = 2.0f;
@@ -14,7 +17,15 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float delayBeforeGettingUp = 1.0f;
     [SerializeField] private float mouseDuckDistance = -1.2f;
 
+    [SerializeField] private float startingArmSpeed = 0.3f;
+
+    [SerializeField] private float armSpeedIncrease = 0.2f;
+    [SerializeField] private float slapDelayDecrease = -0.1f;
+
     private float _currentSlapDelay;
+    private float _currentArmSpeed;
+
+    private int _score = 0;
 
     public static event Action PrepareSlap;
     
@@ -22,6 +33,7 @@ public class GameManager : MonoBehaviour
     {
         StartCoroutine(CountUntilSlap());
         _currentSlapDelay = startingSlapDelay;
+        _currentArmSpeed = startingArmSpeed;
     }
 
     IEnumerator CountUntilSlap()
@@ -42,6 +54,11 @@ public class GameManager : MonoBehaviour
         return _currentSlapDelay;
     }
 
+    public float GetCurrentArmSpeed()
+    {
+        return _currentArmSpeed;
+    }
+
     public float GetDelayBeforeGettingUp()
     {
         return delayBeforeGettingUp;
@@ -54,6 +71,15 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
+        _currentSlapDelay += slapDelayDecrease;
+        _currentArmSpeed += armSpeedIncrease;
+
         StartCoroutine(CountUntilSlap());
+    }
+
+    public void UpdateScore()
+    {
+        _score++;
+        scoreText.text = $"Score\n{_score}";
     }
 }

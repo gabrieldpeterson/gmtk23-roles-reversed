@@ -6,7 +6,7 @@ using UnityEngine;
 public class Arm : MonoBehaviour
 {
     [SerializeField] private float movementDistance = 4.0f;
-    [SerializeField] private float movementSpeed = 2.0f;
+    // [SerializeField] private float movementSpeed = 2.0f;
     [SerializeField] private float mouseDistanceTolerance = 0.1f;
     [SerializeField] private Color warningColor;
     [SerializeField] private Color slapColor;
@@ -52,7 +52,7 @@ public class Arm : MonoBehaviour
     private void MoveArm()
     {
         const float tau = Mathf.PI * 2;
-        float cycle = Time.time * movementSpeed;
+        float cycle = Time.time * _gameManager.GetCurrentArmSpeed();
         float rawSinWave = Mathf.Sin(cycle * tau);
         float offset = rawSinWave * movementDistance;
         transform.position = new Vector2(_startingPosition.x + offset, _startingPosition.y);
@@ -131,6 +131,7 @@ public class Arm : MonoBehaviour
         // If successfully dodged
         if (mouse.GetComponent<Mouse>().IsDucking())
         {
+            _gameManager.UpdateScore();
             yield return new WaitForSeconds(_gameManager.GetDelayBeforeGettingUp());
             ResetBothArms();
             _gameManager.ResumeGame();
