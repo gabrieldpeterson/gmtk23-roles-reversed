@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text highScoreText;
     [SerializeField] private Canvas gameOverCanvas;
+
+    [SerializeField] private float gameOverCanvasDelay = 2.5f;
     
     [SerializeField] private List<GameObject> mice;
 
@@ -126,7 +128,7 @@ public class GameManager : MonoBehaviour
             highScoreText.text = $"High Score\n{_score}";
         }
 
-        gameOverCanvas.GameObject().SetActive(true);
+        StartCoroutine(DisplayGameOverCanvas());
     }
 
     public void ResetGame()
@@ -137,5 +139,11 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
+    }
+
+    IEnumerator DisplayGameOverCanvas()
+    {
+        yield return new WaitForSeconds(gameOverCanvasDelay);
+        gameOverCanvas.GameObject().SetActive(true);
     }
 }

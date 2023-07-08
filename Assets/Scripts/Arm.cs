@@ -12,6 +12,7 @@ public class Arm : MonoBehaviour
     [SerializeField] private Color slapColor;
 
     [SerializeField] private Sprite uprightArm;
+    [SerializeField] private Sprite uprightArmWarning;
     [SerializeField] private Sprite shortArmSlap;
     [SerializeField] private Sprite longArmSlap;
     [SerializeField] private float yOffsetShortArmSlap = -2.0f;
@@ -135,12 +136,15 @@ public class Arm : MonoBehaviour
 
     public void ResetColor()
     {
-        _spriteRenderer.color = _startingColor;
+        //_spriteRenderer.color = _startingColor;
+        _spriteRenderer.sprite = uprightArm;
     }
 
     IEnumerator Slap(GameObject mouse)
     {
-        _spriteRenderer.color = warningColor;
+        //_spriteRenderer.color = warningColor;
+        _spriteRenderer.sprite = uprightArmWarning;
+        
         yield return new WaitForSeconds(_gameManager.GetCurrentSlapDelay());
         
         UpdateArmSpriteWhileSlapping(mouse);
