@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private float startingSlapDelay = 1.5f;
     [SerializeField] private float delayBeforeGettingUp = 1.0f;
+    [SerializeField] private float mouseDuckDistance = -1.2f;
 
     private float _currentSlapDelay;
 
@@ -44,5 +45,10 @@ public class GameManager : MonoBehaviour
     public float GetDelayBeforeGettingUp()
     {
         return delayBeforeGettingUp;
+    }
+
+    public float GetMouseDuckDistance()
+    {
+        return mouseDuckDistance;
     }
 }
