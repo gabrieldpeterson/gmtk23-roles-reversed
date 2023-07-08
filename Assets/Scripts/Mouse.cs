@@ -30,6 +30,16 @@ public class Mouse : MonoBehaviour
         _playerController = FindFirstObjectByType<PlayerController>();
         _startingPosition = transform.position;
         _duckDistance = _gameManager.GetMouseDuckDistance();
+        
+        PlayIdleAnimationFromRandomStart();
+    }
+
+    private void PlayIdleAnimationFromRandomStart()
+    {
+        Animator anim = GetComponent<Animator>();
+        float randomStart = Random.Range(0f, 1f);
+        
+        anim.Play("MouseIdle", -1, randomStart);
     }
 
     public void Duck()
