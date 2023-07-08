@@ -2,12 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
     [SerializeField] private TMP_Text highScoreText;
+    [SerializeField] private Canvas gameOverCanvas;
     
     [SerializeField] private List<GameObject> mice;
 
@@ -36,6 +40,16 @@ public class GameManager : MonoBehaviour
         _currentSlapDelay = startingSlapDelay;
         _currentArmSpeed = startingArmSpeed;
         DisplayHighScore();
+    }
+
+    private void OnEnable()
+    {
+        Arm.MouseSlapped += GameOver;
+    }
+
+    private void OnDisable()
+    {
+        Arm.MouseSlapped -= GameOver;
     }
 
     IEnumerator CountUntilSlap()
@@ -99,5 +113,12 @@ public class GameManager : MonoBehaviour
             PlayerPrefs.SetInt("HighScore", _score);
             highScoreText.text = $"High Score\n{_score}";
         }
+
+        gameOverCanvas.GameObject().SetActive(true);
+    }
+
+    public void ResetGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
