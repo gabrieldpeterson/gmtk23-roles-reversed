@@ -1477,6 +1477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8c626d26be5c4427a0917f9d40b9291, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 2099106995}
   mice:
   - {fileID: 873855322}
   - {fileID: 1388965675}
