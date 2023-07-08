@@ -127,12 +127,17 @@ public class Arm : MonoBehaviour
     {
         _spriteRenderer.color = warningColor;
         yield return new WaitForSeconds(_gameManager.GetCurrentSlapDelay());
-        _spriteRenderer.color = slapColor;
         
         // If successfully dodged
         if (mouse.GetComponent<Mouse>().IsDucking())
         {
+            yield return new WaitForSeconds(_gameManager.GetDelayBeforeGettingUp());
             ResetBothArms();
+            _gameManager.ResumeGame();
+        }
+        else
+        {
+            _spriteRenderer.color = slapColor;
         }
 
     }

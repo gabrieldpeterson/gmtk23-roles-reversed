@@ -51,4 +51,9 @@ public class GameManager : MonoBehaviour
     {
         return mouseDuckDistance;
     }
+
+    public void ResumeGame()
+    {
+        StartCoroutine(CountUntilSlap());
+    }
 }
