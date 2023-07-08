@@ -2016,9 +2016,9 @@ MonoBehaviour:
   slapColor: {r: 1, g: 0, b: 0, a: 1}
   uprightArm: {fileID: 21300000, guid: 9d7db284a4ad24f279e6cf3e67ae4c5e, type: 3}
   shortArmSlap: {fileID: 21300000, guid: e94c0ad7561c14dcb848a31ce7e5983c, type: 3}
-  longArmSlap: {fileID: 21300000, guid: e94c0ad7561c14dcb848a31ce7e5983c, type: 3}
+  longArmSlap: {fileID: 21300000, guid: 30a95455f4cf140c8b8f8d4d03a5e780, type: 3}
   yOffsetShortArmSlap: -1.4
-  yOffsetLongArmSlap: -3.5
+  yOffsetLongArmSlap: -2.8
 --- !u!1 &1388965675
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,9 +2497,9 @@ MonoBehaviour:
   slapColor: {r: 1, g: 0, b: 0, a: 1}
   uprightArm: {fileID: 21300000, guid: cd87bf3a8c8c3458da4a7134a0c86aec, type: 3}
   shortArmSlap: {fileID: 21300000, guid: edbfdc8a8151b447c9ddf2367f482365, type: 3}
-  longArmSlap: {fileID: 21300000, guid: edbfdc8a8151b447c9ddf2367f482365, type: 3}
+  longArmSlap: {fileID: 21300000, guid: 30a95455f4cf140c8b8f8d4d03a5e780, type: 3}
   yOffsetShortArmSlap: -1.4
-  yOffsetLongArmSlap: -3.5
+  yOffsetLongArmSlap: -2.8
 --- !u!1 &1699393589
 GameObject:
   m_ObjectHideFlags: 0

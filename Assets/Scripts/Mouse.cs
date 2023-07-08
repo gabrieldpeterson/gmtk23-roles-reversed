@@ -42,7 +42,7 @@ public class Mouse : MonoBehaviour
 
     IEnumerator GetUp()
     {
-        yield return new WaitForSeconds(_gameManager.GetDelayBeforeGettingUp());
+        yield return new WaitForSeconds(_gameManager.GetDelayBeforeGettingUp() * 2);
         _isDucking = false;
         Debug.Log($"{name} got back up");
         _playerController.ToggleCanDuck();
