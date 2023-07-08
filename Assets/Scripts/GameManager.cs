@@ -7,6 +7,7 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private TMP_Text highScoreText;
     
     [SerializeField] private List<GameObject> mice;
 
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine(CountUntilSlap());
         _currentSlapDelay = startingSlapDelay;
         _currentArmSpeed = startingArmSpeed;
+        DisplayHighScore();
     }
 
     IEnumerator CountUntilSlap()
@@ -81,5 +83,21 @@ public class GameManager : MonoBehaviour
     {
         _score++;
         scoreText.text = $"Score\n{_score}";
+    }
+
+    private void DisplayHighScore()
+    {
+        int currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
+        highScoreText.text = $"High Score\n{currentHighScore}";
+    }
+
+    public void GameOver()
+    {
+        int currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
+        if (_score > currentHighScore)
+        {
+            PlayerPrefs.SetInt("HighScore", _score);
+            highScoreText.text = $"High Score\n{_score}";
+        }
     }
 }
