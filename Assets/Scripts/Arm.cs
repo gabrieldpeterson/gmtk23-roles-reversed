@@ -26,6 +26,7 @@ public class Arm : MonoBehaviour
     private float _armStartingYPosition;
 
     private GameManager _gameManager;
+    private AudioController _audioController;
 
     public static Action MouseSlapped;
 
@@ -47,6 +48,7 @@ public class Arm : MonoBehaviour
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _startingColor = _spriteRenderer.color;
         _armStartingYPosition = transform.position.y;
+        _audioController = FindFirstObjectByType<AudioController>();
     }
 
     
@@ -142,6 +144,8 @@ public class Arm : MonoBehaviour
         yield return new WaitForSeconds(_gameManager.GetCurrentSlapDelay());
         
         UpdateArmSpriteWhileSlapping(mouse);
+        
+        _audioController.PlayAudioClip(_audioController.whack, 1f);
 
         // If successfully dodged
         if (mouse.GetComponent<Mouse>().IsDucking())

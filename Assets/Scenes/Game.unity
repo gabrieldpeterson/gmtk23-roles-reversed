@@ -1826,6 +1826,7 @@ MonoBehaviour:
   startingArmSpeed: 0.3
   armSpeedIncrease: 0.1
   slapDelayDecrease: -0.1
+  scoreToChangeMusic: 7
 --- !u!1 &1059402339
 GameObject:
   m_ObjectHideFlags: 0

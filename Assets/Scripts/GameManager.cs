@@ -27,8 +27,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float armSpeedIncrease = 0.2f;
     [SerializeField] private float slapDelayDecrease = -0.1f;
 
+    [SerializeField] private int scoreToChangeMusic = 5;
+
     private float _currentSlapDelay;
     private float _currentArmSpeed;
+
+    private AudioController _audioController;
 
     private int _score = 0;
 
@@ -40,6 +44,8 @@ public class GameManager : MonoBehaviour
         _currentSlapDelay = startingSlapDelay;
         _currentArmSpeed = startingArmSpeed;
         DisplayHighScore();
+        _audioController = FindFirstObjectByType<AudioController>();
+        _audioController.ChangeMusic(_audioController.peacefulMusic, 0.5f);
     }
 
     private void OnEnable()
@@ -97,6 +103,12 @@ public class GameManager : MonoBehaviour
     {
         _score++;
         scoreText.text = $"Score\n{_score}";
+
+        if (_score == scoreToChangeMusic)
+        {
+            _audioController.ChangeMusic(_audioController.intenseMusic, 0.5f);
+            Debug.Log("Change music");
+        }
     }
 
     private void DisplayHighScore()

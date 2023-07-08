@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 1053479144}
   - component: {fileID: 1053479143}
   m_Layer: 0
-  m_Name: MusicController
+  m_Name: AudioController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -598,6 +598,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb9fa88f22de4f5d999c50034b63faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  peacefulMusic: {fileID: 8300000, guid: a81c60461f5da4fff82644dc7eca629f, type: 3}
+  intenseMusic: {fileID: 8300000, guid: 98753ba70800d4c87bba3e90b00af54a, type: 3}
+  whack: {fileID: 8300000, guid: 152fb2562301f4b1faaa1f22c787157b, type: 3}
 --- !u!4 &1053479145
 Transform:
   m_ObjectHideFlags: 0
