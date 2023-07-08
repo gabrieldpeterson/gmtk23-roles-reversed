@@ -2012,7 +2012,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementDistance: 3
   mouseDistanceTolerance: 0.01
-  warningColor: {r: 1, g: 0.653165, b: 0, a: 1}
+  warningColor: {r: 1, g: 0.759434, b: 0.9547654, a: 1}
   slapColor: {r: 1, g: 0, b: 0, a: 1}
   uprightArm: {fileID: 21300000, guid: 9d7db284a4ad24f279e6cf3e67ae4c5e, type: 3}
   shortArmSlap: {fileID: 21300000, guid: e94c0ad7561c14dcb848a31ce7e5983c, type: 3}
@@ -2493,7 +2493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementDistance: -3
   mouseDistanceTolerance: 0.01
-  warningColor: {r: 1, g: 0.653165, b: 0, a: 1}
+  warningColor: {r: 1, g: 0.759434, b: 0.9547654, a: 1}
   slapColor: {r: 1, g: 0, b: 0, a: 1}
   uprightArm: {fileID: 21300000, guid: cd87bf3a8c8c3458da4a7134a0c86aec, type: 3}
   shortArmSlap: {fileID: 21300000, guid: edbfdc8a8151b447c9ddf2367f482365, type: 3}

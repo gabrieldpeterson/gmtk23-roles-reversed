@@ -27,6 +27,8 @@ public class Arm : MonoBehaviour
 
     private GameManager _gameManager;
 
+    public static Action MouseSlapped;
+
     private void OnEnable()
     {
         GameManager.PrepareSlap += LookForMice;
@@ -101,7 +103,6 @@ public class Arm : MonoBehaviour
         {
             arm.EnableCanMove();
             arm.DisableLookingForMice();
-            arm.ResetColor();
         }
     }
 
@@ -153,6 +154,8 @@ public class Arm : MonoBehaviour
         else
         {
             _spriteRenderer.color = slapColor;
+            MouseSlapped?.Invoke();
+            mouse.GetComponent<Mouse>().StopAnimation();
         }
     }
 
@@ -160,6 +163,7 @@ public class Arm : MonoBehaviour
     {
         Mouse mouseScript = mouse.GetComponent<Mouse>();
         _spriteRenderer.sortingLayerName = "Cat Arms Slapping";
+        ResetColor();
 
         if (mouseScript.GetRow() == Mouse.Row.Front)
         {
