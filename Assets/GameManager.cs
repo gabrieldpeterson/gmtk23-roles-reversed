@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private float maxCycleTime = 5.0f;
 
     [SerializeField] private float startingSlapDelay = 1.5f;
+    [SerializeField] private float delayBeforeGettingUp = 1.0f;
 
     private float _currentSlapDelay;
 
@@ -38,5 +39,10 @@ public class GameManager : MonoBehaviour
     public float GetCurrentSlapDelay()
     {
         return _currentSlapDelay;
+    }
+
+    public float GetDelayBeforeGettingUp()
+    {
+        return delayBeforeGettingUp;
     }
 }

@@ -545,7 +545,6 @@ GameObject:
   m_Component:
   - component: {fileID: 243662701}
   - component: {fileID: 243662702}
-  - component: {fileID: 243662703}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -580,36 +579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7026d6a998d4143b18f9e501e62769de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &243662703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 243662700}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 56af2bdca638f4f0792c035e462a75d5, type: 3}
-  m_NotificationBehavior: 3
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!1 &295916770
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +821,7 @@ GameObject:
   m_Component:
   - component: {fileID: 806012448}
   - component: {fileID: 806012447}
+  - component: {fileID: 806012449}
   m_Layer: 0
   m_Name: Mouse 5
   m_TagString: Untagged
@@ -927,6 +897,20 @@ Transform:
   m_Father: {fileID: 366130551}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &806012449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 806012446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511c716d26bc4265ac6481ae3e7f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultSprite: {fileID: 0}
+  _duckSprite: {fileID: 0}
 --- !u!1 &873855322
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +921,7 @@ GameObject:
   m_Component:
   - component: {fileID: 873855324}
   - component: {fileID: 873855323}
+  - component: {fileID: 873855325}
   m_Layer: 0
   m_Name: Mouse 1
   m_TagString: Untagged
@@ -1012,6 +997,20 @@ Transform:
   m_Father: {fileID: 366130551}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &873855325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873855322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511c716d26bc4265ac6481ae3e7f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultSprite: {fileID: 0}
+  _duckSprite: {fileID: 0}
 --- !u!1 &959481802
 GameObject:
   m_ObjectHideFlags: 0
@@ -1272,6 +1271,7 @@ MonoBehaviour:
   minCycleTime: 2
   maxCycleTime: 5
   startingSlapDelay: 1.5
+  delayBeforeGettingUp: 1
 --- !u!1 &1104840567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1282,6 +1282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1104840569}
   - component: {fileID: 1104840568}
+  - component: {fileID: 1104840570}
   m_Layer: 0
   m_Name: Mouse 6
   m_TagString: Untagged
@@ -1357,6 +1358,20 @@ Transform:
   m_Father: {fileID: 366130551}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1104840570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104840567}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511c716d26bc4265ac6481ae3e7f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultSprite: {fileID: 0}
+  _duckSprite: {fileID: 0}
 --- !u!1 &1195190660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,6 +1382,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1195190662}
   - component: {fileID: 1195190661}
+  - component: {fileID: 1195190663}
   m_Layer: 0
   m_Name: Mouse 3
   m_TagString: Untagged
@@ -1442,6 +1458,20 @@ Transform:
   m_Father: {fileID: 366130551}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1195190663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195190660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511c716d26bc4265ac6481ae3e7f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultSprite: {fileID: 0}
+  _duckSprite: {fileID: 0}
 --- !u!1 &1321930792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1810,6 +1840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1388965677}
   - component: {fileID: 1388965676}
+  - component: {fileID: 1388965678}
   m_Layer: 0
   m_Name: Mouse 2
   m_TagString: Untagged
@@ -1885,6 +1916,20 @@ Transform:
   m_Father: {fileID: 366130551}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1388965678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388965675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511c716d26bc4265ac6481ae3e7f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultSprite: {fileID: 0}
+  _duckSprite: {fileID: 0}
 --- !u!1 &1660399324
 GameObject:
   m_ObjectHideFlags: 0
@@ -2562,6 +2607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112944659}
   - component: {fileID: 2112944658}
+  - component: {fileID: 2112944660}
   m_Layer: 0
   m_Name: Mouse 4
   m_TagString: Untagged
@@ -2637,3 +2683,17 @@ Transform:
   m_Father: {fileID: 366130551}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2112944660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2112944657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c511c716d26bc4265ac6481ae3e7f1be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _defaultSprite: {fileID: 0}
+  _duckSprite: {fileID: 0}
