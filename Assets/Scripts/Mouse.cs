@@ -12,6 +12,8 @@ public class Mouse : MonoBehaviour
     private SpriteRenderer _spriteRenderer;
     private PlayerController _playerController;
 
+    private bool _isDucking = false;
+
     void Start()
     {
         _gameManager = FindFirstObjectByType<GameManager>();
@@ -30,5 +32,10 @@ public class Mouse : MonoBehaviour
         yield return new WaitForSeconds(_gameManager.GetDelayBeforeGettingUp());
         Debug.Log($"{name} got back up");
         _playerController.ToggleCanDuck();
+    }
+
+    public bool IsDucking()
+    {
+        return _isDucking;
     }
 }

@@ -22,12 +22,12 @@ public class Arm : MonoBehaviour
 
     private void OnEnable()
     {
-        GameManager.prepareSlap += LookForMice;
+        GameManager.PrepareSlap += LookForMice;
     }
 
     private void OnDisable()
     {
-        GameManager.prepareSlap -= LookForMice;
+        GameManager.PrepareSlap -= LookForMice;
     }
 
     void Start()
@@ -68,7 +68,7 @@ public class Arm : MonoBehaviour
             {
                 Debug.Log($"{name} at {transform.position} is slapping {mouse.name} at {mouse.transform.position}");
                 ToggleBothArms();
-                StartCoroutine(Slap());
+                StartCoroutine(Slap(mouse));
                 break;
             }
         }
@@ -98,7 +98,7 @@ public class Arm : MonoBehaviour
         _canMove = !_canMove;
     }
 
-    IEnumerator Slap()
+    IEnumerator Slap(GameObject mouse)
     {
         _spriteRenderer.color = warningColor;
         yield return new WaitForSeconds(_gameManager.GetCurrentSlapDelay());

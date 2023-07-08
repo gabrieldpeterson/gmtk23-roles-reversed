@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     private float _currentSlapDelay;
 
-    public static event Action prepareSlap;
+    public static event Action PrepareSlap;
     
     void Start()
     {
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         float timeUntilSlap = UnityEngine.Random.Range(minCycleTime, maxCycleTime);
         yield return new WaitForSeconds(timeUntilSlap);
         Debug.Log("Prepping slap");
-        prepareSlap?.Invoke();
+        PrepareSlap?.Invoke();
     }
 
     public List<GameObject> GetMice()

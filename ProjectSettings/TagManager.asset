@@ -44,14 +44,26 @@ TagManager:
   - name: Cat Head
     uniqueID: 2903934155
     locked: 0
-  - name: Toy Box
-    uniqueID: 694776753
+  - name: Cat Arms Moving
+    uniqueID: 2990283957
     locked: 0
-  - name: Mice
+  - name: Toy Box Underside
+    uniqueID: 2398891717
+    locked: 0
+  - name: Toy Box Back
+    uniqueID: 2698055403
+    locked: 0
+  - name: Mice Back Row
+    uniqueID: 735076447
+    locked: 0
+  - name: Toy Box Mid
+    uniqueID: 1225899891
+    locked: 0
+  - name: Mice Front Row
     uniqueID: 2609379069
     locked: 0
-  - name: Cat Arms
-    uniqueID: 2990283957
+  - name: Toy Box Front
+    uniqueID: 694776753
     locked: 0
   - name: Label Text
     uniqueID: 1636425787
