@@ -10,6 +10,8 @@ public class AudioController : MonoBehaviour
     [SerializeField] public AudioClip intenseMusic;
     [SerializeField] public AudioClip whack;
     [SerializeField] public AudioClip mouseEep;
+    [SerializeField] public AudioClip jasnah1;
+    [SerializeField] public AudioClip jasnah2;
     
     private AudioSource _audioSource;
     

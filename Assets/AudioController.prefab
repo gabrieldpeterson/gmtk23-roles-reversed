@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2367816536069077614
 MonoBehaviour:
@@ -49,6 +49,8 @@ MonoBehaviour:
   intenseMusic: {fileID: 8300000, guid: 98753ba70800d4c87bba3e90b00af54a, type: 3}
   whack: {fileID: 8300000, guid: 152fb2562301f4b1faaa1f22c787157b, type: 3}
   mouseEep: {fileID: 8300000, guid: bacd54a043bd745319721ea20058ed9b, type: 3}
+  jasnah1: {fileID: 8300000, guid: 70c0513d0b2f948368ebf2cda20bb47b, type: 3}
+  jasnah2: {fileID: 8300000, guid: 0f76699a883be438f818fc8a4ecc9d16, type: 3}
 --- !u!82 &7447617881820426472
 AudioSource:
   m_ObjectHideFlags: 0
@@ -63,7 +65,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.5
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

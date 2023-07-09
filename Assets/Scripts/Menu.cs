@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private TMP_Text localHighScoreText;
-    
+
     void Start()
     {
         int currentHighScore = PlayerPrefs.GetInt("HighScore", 0);

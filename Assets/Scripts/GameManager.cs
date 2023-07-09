@@ -60,6 +60,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("AudioController instance is null");
         }
+        
+        _audioController.PlayAudioClip(_audioController.jasnah2, 1f);
     }
 
     private void OnEnable()
@@ -122,6 +124,7 @@ public class GameManager : MonoBehaviour
         {
             _audioController.ChangeMusic(_audioController.intenseMusic, 0.5f);
             Debug.Log("Change music");
+            _audioController.PlayAudioClip(_audioController.jasnah1, 1f);
         }
     }
 
