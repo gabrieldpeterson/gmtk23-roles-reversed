@@ -70,28 +70,10 @@ public class Arm : MonoBehaviour
 
     private void MoveArm()
     {
-        // const float tau = Mathf.PI * 2;
-        // float cycle = _totalMovement;
-        // float rawSinWave = Mathf.Sin(cycle * tau);
-        // float offset = rawSinWave * movementDistance;
-        // transform.position = new Vector2(_startingPosition.x + offset, _startingPosition.y);
-        //
-        // if (_canMove)
-        // {
-        //     _totalMovement += _gameManager.GetCurrentArmSpeed() * Time.deltaTime;
-        // }
-        
         const float tau = Mathf.PI * 2;
-
-        // Calculate the elapsed time since the last speed change.
         float elapsedTime = Time.time - _lastMovementTime;
-
-        // Calculate the "distance" traveled at the current speed.
         float newMovement = elapsedTime * _gameManager.GetCurrentArmSpeed();
-
-        // Calculate the cycle using the total "distance" traveled.
         float cycle = (_totalMovement + newMovement) % 1;
-
         float rawSinWave = Mathf.Sin(cycle * tau);
         float offset = rawSinWave * movementDistance;
         transform.position = new Vector2(_startingPosition.x + offset, _startingPosition.y);
@@ -147,21 +129,13 @@ public class Arm : MonoBehaviour
 
     public void ToggleMovement()
     {
-        // _canMove = !_canMove;
-        //
-        // if (!_canMove)
-        // {
-        //     _totalMovement = 0f;
-        // }
-        
         if (_canMove)
         {
             // When stopping movement, update _totalMovement to include the "distance" traveled at the current speed.
             float elapsedTime = Time.time - _lastMovementTime;
             _totalMovement += elapsedTime * _gameManager.GetCurrentArmSpeed();
         }
-
-        // Regardless of the current state, remember the current time for the next movement.
+        
         _lastMovementTime = Time.time;
 
         _canMove = !_canMove;

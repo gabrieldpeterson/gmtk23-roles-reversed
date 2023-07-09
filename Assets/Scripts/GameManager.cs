@@ -109,7 +109,10 @@ public class GameManager : MonoBehaviour
 
     public void ResumeGame()
     {
-        _currentSlapDelay += slapDelayDecrease;
+        if (_currentSlapDelay >= 0.5)
+        {
+            _currentSlapDelay += slapDelayDecrease;
+        }
         _currentArmSpeed += armSpeedIncrease;
 
         StartCoroutine(CountUntilSlap());
