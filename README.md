@@ -17,7 +17,7 @@ UsagiYokai<br/>
 ## Music Used
 
 ### Fallen leaves by 陽菜/Hina
-Music: https://www.chosic.com/free-music/all/<br/>
+Music: https://www.chosic.com/free-music/all/?keyword=%E9%99%BD%E8%8F%9C/Hina&artist<br/>
 
 ### The Army of Minotaur by Makai Symphony
 The Army of Minotaur by Makai Symphony | https://soundcloud.com/makai-symphony<br/>
