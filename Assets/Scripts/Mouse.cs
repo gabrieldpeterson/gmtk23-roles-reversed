@@ -23,6 +23,7 @@ public class Mouse : MonoBehaviour
     private Vector2 _startingPosition;
     private float _duckDistance;
     private Animator _anim;
+    private int _animationColor;
 
     private bool _isDucking = false;
     private bool _mouseWasSlapped = false;
@@ -53,9 +54,9 @@ public class Mouse : MonoBehaviour
         _anim = GetComponent<Animator>();
         List<string> animations = new List<string> {"MouseIdleBlack", "MouseIdleGrey", "MouseIdleTan"};
         float randomStart = Random.Range(0f, 1f);
-        int randomAnimation = Random.Range(0, 3);
+        _animationColor = Random.Range(0, 3);
         
-        _anim.Play(animations[randomAnimation], -1, randomStart);
+        _anim.Play(animations[_animationColor], -1, randomStart);
     }
 
     public void Duck()

@@ -26,13 +26,15 @@ public class AudioController : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
-        DontDestroyOnLoad(gameObject);
-    }
-
-    private void Start()
-    {
+    
         _audioSource = GetComponent<AudioSource>();
+
+        if (_audioSource == null)
+        {
+            Debug.LogError("No AudioSource component found on the AudioController GameObject.");
+        }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public void PlayAudioClip(AudioClip clip, float volume)
@@ -42,6 +44,12 @@ public class AudioController : MonoBehaviour
 
     public void ChangeMusic(AudioClip clip, float volume)
     {
+        Debug.Log("Method running correctly");
+        if (_audioSource == null)
+        {
+            Debug.LogError("AudioSource is null.");
+            return;
+        }
         if (_audioSource.clip == clip) { return; }
         Debug.Log($"Music changed to {clip}");
         _audioSource.clip = clip;

@@ -39,15 +39,27 @@ public class GameManager : MonoBehaviour
     private int _score = 0;
 
     public static event Action PrepareSlap;
-    
+
+    private void Awake()
+    {
+        _audioController = FindFirstObjectByType<AudioController>();
+    }
+
     void Start()
     {
         StartCoroutine(CountUntilSlap());
         _currentSlapDelay = startingSlapDelay;
         _currentArmSpeed = startingArmSpeed;
         DisplayHighScore();
-        _audioController = FindFirstObjectByType<AudioController>();
-        _audioController.ChangeMusic(_audioController.peacefulMusic, 0.5f);
+        
+        if (_audioController != null)
+        {
+            _audioController.ChangeMusic(_audioController.peacefulMusic, 0.5f);
+        }
+        else
+        {
+            Debug.LogError("AudioController instance is null");
+        }
     }
 
     private void OnEnable()
