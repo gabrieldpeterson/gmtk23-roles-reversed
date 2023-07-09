@@ -51,9 +51,11 @@ public class Mouse : MonoBehaviour
     private void PlayIdleAnimationFromRandomStart()
     {
         _anim = GetComponent<Animator>();
+        List<string> animations = new List<string> {"MouseIdleBlack", "MouseIdleGrey", "MouseIdleTan"};
         float randomStart = Random.Range(0f, 1f);
+        int randomAnimation = Random.Range(0, 3);
         
-        _anim.Play("MouseIdle", -1, randomStart);
+        _anim.Play(animations[randomAnimation], -1, randomStart);
     }
 
     public void Duck()
