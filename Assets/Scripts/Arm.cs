@@ -27,6 +27,7 @@ public class Arm : MonoBehaviour
     private float _armStartingYPosition;
     private float _totalMovement;
     private float _lastMovementTime;
+    private Jasnah _jasnah;
 
     private GameManager _gameManager;
     private AudioController _audioController;
@@ -54,6 +55,7 @@ public class Arm : MonoBehaviour
         _audioController = FindFirstObjectByType<AudioController>();
         _lastMovementTime = Time.time;
         _totalMovement = 0f;
+        _jasnah = FindObjectOfType<Jasnah>();
     }
 
     
@@ -185,6 +187,7 @@ public class Arm : MonoBehaviour
     {
         //_spriteRenderer.color = warningColor;
         _spriteRenderer.sprite = uprightArmWarning;
+        _jasnah.AboutToSlap();
         
         yield return new WaitForSeconds(_gameManager.GetCurrentSlapDelay());
         
@@ -199,6 +202,7 @@ public class Arm : MonoBehaviour
             yield return new WaitForSeconds(_gameManager.GetDelayBeforeGettingUp());
             ResetBothArms();
             _gameManager.ResumeGame();
+            _jasnah.FinishedSlapping();
         }
         else
         {
