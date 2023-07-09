@@ -131,8 +131,10 @@ public class GameManager : MonoBehaviour
         highScoreText.text = $"High Score\n{currentHighScore}";
     }
 
-    public void GameOver()
+    public void GameOver(GameObject mouse)
     {
+        // mouse not used here
+        
         int currentHighScore = PlayerPrefs.GetInt("HighScore", 0);
         if (_score > currentHighScore)
         {

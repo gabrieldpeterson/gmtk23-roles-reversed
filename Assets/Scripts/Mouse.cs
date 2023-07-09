@@ -75,8 +75,9 @@ public class Mouse : MonoBehaviour
         yield return new WaitForSeconds(_gameManager.GetDelayBeforeGettingUp() * 2);
         _isDucking = false;
         Debug.Log($"{name} got back up");
-        _playerController.ToggleCanDuck();
         transform.position = _startingPosition;
+        _playerController.ToggleCanDuck();
+        //transform.position = _startingPosition;
     }
 
     public bool IsDucking()
@@ -89,13 +90,17 @@ public class Mouse : MonoBehaviour
         return row;
     }
 
-    private void MouseSlapped()
+    private void MouseSlapped(GameObject slappedMouse)
     {
-        _mouseWasSlapped = true;
+        if (slappedMouse == this.gameObject)
+        {
+            _mouseWasSlapped = true;
+            _anim.SetTrigger("wasBopped");
+        }
     }
 
     public void StopAnimation()
     {
-        _anim.enabled = false;
+        //_anim.enabled = false;
     }
 }

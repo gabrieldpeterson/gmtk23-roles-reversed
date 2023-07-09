@@ -32,7 +32,7 @@ public class Arm : MonoBehaviour
     private GameManager _gameManager;
     private AudioController _audioController;
 
-    public static Action MouseSlapped;
+    public static Action<GameObject> MouseSlapped;
 
     private void OnEnable()
     {
@@ -207,9 +207,14 @@ public class Arm : MonoBehaviour
         else
         {
             _spriteRenderer.color = slapColor;
-            MouseSlapped?.Invoke();
-            mouse.GetComponent<Mouse>().StopAnimation();
+            MouseSlapped?.Invoke(mouse);
+            //mouse.GetComponent<Mouse>().StopAnimation();
             _audioController.PlayAudioClip(_audioController.mouseEep, 1f);
+            
+            // test
+            yield return new WaitForSeconds(_gameManager.GetDelayBeforeGettingUp());
+            ResetBothArms();
+            _spriteRenderer.color = _startingColor;
         }
     }
 
