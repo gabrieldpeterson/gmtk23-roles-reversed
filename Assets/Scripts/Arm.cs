@@ -205,6 +205,7 @@ public class Arm : MonoBehaviour
             _spriteRenderer.color = slapColor;
             MouseSlapped?.Invoke();
             mouse.GetComponent<Mouse>().StopAnimation();
+            _audioController.PlayAudioClip(_audioController.mouseEep, 1f);
         }
     }
 
