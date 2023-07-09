@@ -6,6 +6,15 @@ Created for the GMTK 2023 Game Jam, where this year's theme is "Roles Reversed"
 
 Place as the mice, and try to avoid Jasnah's Bops by pressing the key on your keyboard that corresponds to the mouse you want to have duck. Her paw will get a red outline when she is about to strike to give you a few moments of warning.
 
+## Credits
+
+### Programming
+Gabriel Peterson
+
+### Artwork
+UsagiYokai
+[UsagiYokai's Twitch](https://www.twitch.tv/usagi_yokai)
+
 ## Music Used
 
 ### Fallen leaves by 陽菜/Hina
