@@ -2,7 +2,7 @@
 
 ![game screenshot, a cat about to bop some mice](JasnahsBoppers.png "Jasnah's Boppers")
 
-Created for the GMTK 2023 Game Jam, where this year's theme is "Roles Reversed"<br/>
+Created for the GMTK 2023 Game Jam, where this year's theme is "Roles Reversed"<br/><br/>
 Place as the mice, and try to avoid Jasnah's Bops by pressing the key on your keyboard that corresponds to the mouse you want to have duck. Her paw will get a red outline when she is about to strike to give you a few moments of warning.
 
 ## Credits
